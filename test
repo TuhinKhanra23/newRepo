@@ -1,0 +1,32 @@
+
+#2 [internal] load metadata for docker.io/library/openjdk:17
+#2 ERROR: failed to copy: httpReadSeeker: failed open: unexpected status code https://registry-1.docker.io/v2/library/openjdk/manifests/sha256:98f0304b3a3b7c12ce641177a99d1f3be56f532473a528fda38d53d519cafb13: 429 Too Many Requests - Server message: toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limit
+------
+ > [internal] load metadata for docker.io/library/openjdk:17:
+------
+Dockerfile:1
+--------------------
+   1 | >>> FROM openjdk:17
+   2 |     
+   3 |     WORKDIR /app
+--------------------
+ERROR: failed to solve: openjdk:17: failed to copy: httpReadSeeker: failed open: unexpected status code https://registry-1.docker.io/v2/library/openjdk/manifests/sha256:98f0304b3a3b7c12ce641177a99d1f3be56f532473a528fda38d53d519cafb13: 429 Too Many Requests - Server message: toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limit
+
+[Container] 2024/10/21 10:24:25.672670 Command did not exit successfully docker build -t $REPOSITORY_URI:latest . exit status 1
+[Container] 2024/10/21 10:24:25.677833 Phase complete: BUILD State: FAILED
+[Container] 2024/10/21 10:24:25.677852 Phase context status code: COMMAND_EXECUTION_ERROR Message: Error while executing command: docker build -t $REPOSITORY_URI:latest .. Reason: exit status 1
+[Container] 2024/10/21 10:24:25.707997 Entering phase POST_BUILD
+[Container] 2024/10/21 10:24:25.711586 Running command echo Build completed on `date`
+Build completed on Mon Oct 21 10:24:25 UTC 2024
+
+[Container] 2024/10/21 10:24:25.718995 Running command echo Pushing the Docker images...
+Pushing the Docker images...
+
+[Container] 2024/10/21 10:24:25.724856 Running command docker push $REPOSITORY_URI:latest
+The push refers to repository [061051232976.dkr.ecr.us-east-1.amazonaws.com/movie-booking]
+An image does not exist locally with the tag: 061051232976.dkr.ecr.us-east-1.amazonaws.com/movie-booking
+
+[Container] 2024/10/21 10:24:25.746361 Command did not exit successfully docker push $REPOSITORY_URI:latest exit status 1
+[Container] 2024/10/21 10:24:25.751521 Phase complete: POST_BUILD State: FAILED
+[Container] 2024/10/21 10:24:25.751542 Phase context status code: COMMAND_EXECUTION_ERROR Message: Error while executing command: docker push $REPOSITORY_URI:latest. Reason: exit status 1
+[Container] 2024/10/21 10:24:25.937045 Set report auto-discover timeout to 5 seconds
