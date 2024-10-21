@@ -20,6 +20,17 @@ ERROR: failed to solve: openjdk:17: failed to copy: httpReadSeeker: failed open:
 Build completed on Mon Oct 21 10:24:25 UTC 2024
 
 [Container] 2024/10/21 10:24:25.718995 Running command echo Pushing the Docker images...
+
+
+
+
+
+
+
+
+
+
+.dkr.ecr.<your-region>.amazonaws.com
 Pushing the Docker images...
 
 [Container] 2024/10/21 10:24:25.724856 Running command docker push $REPOSITORY_URI:latest
